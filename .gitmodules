@@ -1,0 +1,3 @@
+[submodule "ssbj/ssbj_openmdao"]
+	path = ssbj/ssbj_openmdao
+	url = https://github.com/OneraHub/SSBJ-OpenMDAO
