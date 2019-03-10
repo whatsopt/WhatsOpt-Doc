@@ -18,10 +18,10 @@ def to_thrift_disc1_input(inputs):
     ins = Disc1Input()
     
     
-    ins.x = float(inputs['x'])
+    ins.x = inputs['x'].tolist()
     
     
-    ins.y2 = float(inputs['y2'])
+    ins.y2 = inputs['y2'].tolist()
     
     
     ins.z = inputs['z'].tolist()
@@ -37,25 +37,25 @@ def to_thrift_disc1_output(outputs):
     output = Disc1Output()
     
     
-    output.y1 = float(outputs['y1'])
+    output.y1 = outputs['y1'].tolist()
     
     return output
 
 # Disc2 
 def to_openmdao_disc2_inputs(ins, inputs={}):
     
-    inputs['z'] = np.array(ins.z)
     inputs['y1'] = np.array(ins.y1)
+    inputs['z'] = np.array(ins.z)
     return inputs
 
 def to_thrift_disc2_input(inputs):
     ins = Disc2Input()
     
     
+    ins.y1 = inputs['y1'].tolist()
+    
+    
     ins.z = inputs['z'].tolist()
-    
-    
-    ins.y1 = float(inputs['y1'])
     
     return ins
 
@@ -68,16 +68,16 @@ def to_thrift_disc2_output(outputs):
     output = Disc2Output()
     
     
-    output.y2 = float(outputs['y2'])
+    output.y2 = outputs['y2'].tolist()
     
     return output
 
 # Functions 
 def to_openmdao_functions_inputs(ins, inputs={}):
     
-    inputs['y2'] = np.array(ins.y2)
-    inputs['y1'] = np.array(ins.y1)
     inputs['x'] = np.array(ins.x)
+    inputs['y1'] = np.array(ins.y1)
+    inputs['y2'] = np.array(ins.y2)
     inputs['z'] = np.array(ins.z)
     return inputs
 
@@ -85,13 +85,13 @@ def to_thrift_functions_input(inputs):
     ins = FunctionsInput()
     
     
-    ins.y2 = float(inputs['y2'])
+    ins.x = inputs['x'].tolist()
     
     
-    ins.y1 = float(inputs['y1'])
+    ins.y1 = inputs['y1'].tolist()
     
     
-    ins.x = float(inputs['x'])
+    ins.y2 = inputs['y2'].tolist()
     
     
     ins.z = inputs['z'].tolist()
@@ -109,13 +109,13 @@ def to_thrift_functions_output(outputs):
     output = FunctionsOutput()
     
     
-    output.f = float(outputs['f'])
+    output.f = outputs['f'].tolist()
     
     
-    output.g1 = float(outputs['g1'])
+    output.g1 = outputs['g1'].tolist()
     
     
-    output.g2 = float(outputs['g2'])
+    output.g2 = outputs['g2'].tolist()
     
     return output
 
