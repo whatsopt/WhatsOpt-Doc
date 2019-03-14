@@ -11,7 +11,7 @@ from optparse import OptionParser
 # Use ssbj_openmdao as a module
 import os, sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "ssbj_openmdao"))
-from ssbj_openmdao import ssbj_mda
+from ssbj_openmdao.ssbj_mda import init_ssbj_mda
 
 from structure import Structure
 from aerodynamics import Aerodynamics
@@ -21,10 +21,9 @@ from constraints import Constraints
 
 class Ssbj(SsbjBase):
     """ An OpenMDAO base component to encapsulate Ssbj MDA """
-    pass
     def __init__(self):
         super(Ssbj, self).__init__()
-        self.scalers = ssbj_mda.init_ssbj_mda()
+        self.scalers = init_ssbj_mda()
 
     def create_structure(self):
         return Structure(self.scalers)

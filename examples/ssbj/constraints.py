@@ -18,15 +18,15 @@ class Constraints(ConstraintsBase):
         outputs['con2_esf'] = 0.5 - ESF  
         
         outputs['con_dpdx'] = inputs['dpdx']*self.scalers['dpdx'] - 1.04
-        outputs['con_temp'] = inputs['Temp']*self.scalers['Temp']-1.02 
+        outputs['con_temp'] = inputs['Temp']*self.scalers['Temp']- 1.02 
         outputs['con_theta_low'] = 0.96-inputs['Theta']*self.scalers['Theta']
         outputs['con_theta_up'] = inputs['Theta']*self.scalers['Theta']-1.04
         outputs['con_dt'] = inputs['DT']*self.scalers['DT']        
-        outputs['con_sigma1'] = inputs['sigma'][0]*self.scalers['sigma'][0]-1.9
-        outputs['con_sigma2'] = inputs['sigma'][1]*self.scalers['sigma'][1]-1.9
-        outputs['con_sigma3'] = inputs['sigma'][2]*self.scalers['sigma'][2]-1.9 
-        outputs['con_sigma4'] = inputs['sigma'][3]*self.scalers['sigma'][3]-1.9 
-        outputs['con_sigma5'] = inputs['sigma'][4]*self.scalers['sigma'][4]-1.9 
+        outputs['con_sigma1'] = inputs['sigma'][0]*self.scalers['sigma'][0]-1.09
+        outputs['con_sigma2'] = inputs['sigma'][1]*self.scalers['sigma'][1]-1.09
+        outputs['con_sigma3'] = inputs['sigma'][2]*self.scalers['sigma'][2]-1.09 
+        outputs['con_sigma4'] = inputs['sigma'][3]*self.scalers['sigma'][3]-1.09 
+        outputs['con_sigma5'] = inputs['sigma'][4]*self.scalers['sigma'][4]-1.09 
 
 
 	
