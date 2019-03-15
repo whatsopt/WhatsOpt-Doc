@@ -1,6 +1,6 @@
 [submodule "ssbj/ssbj_openmdao"]
 	path = examples/ssbj/ssbj_openmdao
-	url = git@github.com:OneraHub/SSBJ-OpenMDAO
+	url = https://github.com/OneraHub/SSBJ-OpenMDAO
 [submodule "examples/nested_ssbj/ssbj_openmdao"]
 	path = examples/nested_ssbj/ssbj_openmdao
-	url = git@github.com:OneraHub/SSBJ-OpenMDAO
+	url = https://github.com/OneraHub/SSBJ-OpenMDAO
