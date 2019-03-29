@@ -11,11 +11,14 @@ from sellar_base import SellarBase, SellarFactoryBase
 
 class Sellar(SellarBase):
     """ An OpenMDAO component to encapsulate Sellar analysis """
+    def __init__(self, **kwargs):
+        super(Sellar, self).__init__(**kwargs)
+
+        self.nonlinear_solver = RecklessNonlinearBlockGS()
+        self.linear_solver = ScipyKrylov()
+
     def setup(self):
         super(Sellar, self).setup()
-        
-        self.nonlinear_solver = RecklessNonlinearBlockGS() 
-        self.linear_solver = ScipyKrylov()
 
 
 class SellarFactory(SellarFactoryBase):
