@@ -8,7 +8,7 @@ from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 
 from server.sellar import Sellar
-from sellar_base import SellarBase
+from sellar import Sellar as SellarOriginal
 
 from .discipline_proxy import Disc1Proxy
 
@@ -17,7 +17,7 @@ from .discipline_proxy import Disc2Proxy
 from .discipline_proxy import FunctionsProxy
 
 
-class SellarProxy(SellarBase):
+class SellarProxy(SellarOriginal):
     
     def __init__(self):
         super(SellarProxy, self).__init__()

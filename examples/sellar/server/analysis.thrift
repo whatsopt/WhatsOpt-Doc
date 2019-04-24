@@ -16,33 +16,33 @@ typedef list<Cube> HyperCube
 typedef list<ICube> IHyperCube
 
 struct Disc1Input {
-    1: Vector x      
-    2: Vector y2      
-    3: Vector z      
+    1: Float x      
+    2: Vector z      
+    3: Float y2      
 }
 
 struct Disc1Output {
-    1: Vector y1     
+    1: Float y1     
 }
 struct Disc2Input {
-    1: Vector y1      
-    2: Vector z      
+    1: Vector z      
+    2: Float y1      
 }
 
 struct Disc2Output {
-    1: Vector y2     
+    1: Float y2     
 }
 struct FunctionsInput {
-    1: Vector x      
-    2: Vector y1      
-    3: Vector y2      
-    4: Vector z      
+    1: Float x      
+    2: Vector z      
+    3: Float y1      
+    4: Float y2      
 }
 
 struct FunctionsOutput {
-    1: Vector f     
-    2: Vector g1     
-    3: Vector g2     
+    1: Float f     
+    2: Float g1     
+    3: Float g2     
 }
 
 service Sellar {

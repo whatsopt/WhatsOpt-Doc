@@ -6,10 +6,9 @@
 # analysis_id: 1
 
 import numpy as np
-from openmdao.api import Problem, Group, ParallelGroup, IndepVarComp
-from openmdao.api import NonlinearBlockGS, ScipyKrylov
-from openmdao.api import view_model
-from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
+from openmdao.api import Problem, Group
+from openmdao.api import IndepVarComp
+
 
 from disc1 import Disc1
 from disc2 import Disc2
@@ -17,21 +16,6 @@ from functions import Functions
 
 class SellarBase(Group):
     """ An OpenMDAO base component to encapsulate Sellar MDA """
-    def __init__(self, thrift_client=None, **kwargs):
-        super(SellarBase, self). __init__(**kwargs)
-
-        self.nonlinear_solver = NonlinearBlockGS() 
-        self.nonlinear_solver.options['atol'] = 1.0e-10
-        self.nonlinear_solver.options['rtol'] = 1.0e-10
-        self.nonlinear_solver.options['maxiter'] = 10
-        self.nonlinear_solver.options['err_on_maxiter'] = True
-        self.nonlinear_solver.options['iprint'] = 1
-        self.linear_solver = ScipyKrylov()
-        self.linear_solver.options['atol'] = 1.0e-10
-        self.linear_solver.options['rtol'] = 1.0e-10
-        self.linear_solver.options['maxiter'] = 10
-        self.linear_solver.options['err_on_maxiter'] = True
-        self.linear_solver.options['iprint'] = 1
 
     def setup(self): 
         indeps = self.add_subsystem('indeps', IndepVarComp(), promotes=['*'])
@@ -43,11 +27,17 @@ class SellarBase(Group):
         self.add_subsystem('Functions', self.create_functions(), promotes=['x', 'z', 'y1', 'y2', 'f', 'g1', 'g2'])
 
     def create_disc1(self):
+    
     	return Disc1()
+    
     def create_disc2(self):
+    
     	return Disc2()
+    
     def create_functions(self):
+    
     	return Functions()
+    
 
 
 # Used by Thrift server to serve disciplines
