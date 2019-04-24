@@ -9,11 +9,11 @@ from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 from thrift.server import TServer
 
-from server.sellar_optim import SellarOptim as SellarOptimService
-from server.sellar_optim_conversions import *
-from sellar_optim import SellarOptimFactory as Factory
+from server.nested_sellar import NestedSellar as NestedSellarService
+from server.nested_sellar_conversions import *
+from nested_sellar import NestedSellarFactory as Factory
 
-class SellarOptimHandler:
+class NestedSellarHandler:
     server = None
 
     def __init__(self):
@@ -31,10 +31,10 @@ class SellarOptimHandler:
         print("Ping!")
 
     def shutdown(self):
-        print("Shutting down SellarOptim server...")
+        print("Shutting down NestedSellar server...")
         exit(0)
 
-    # SellarOptim interface
+    # NestedSellar interface
     
     def compute_functions(self, ins):
         outputs = {}
@@ -56,14 +56,14 @@ class SellarOptimHandler:
     
 
 
-handler = SellarOptimHandler()
-processor = SellarOptimService.Processor(handler)
+handler = NestedSellarHandler()
+processor = NestedSellarService.Processor(handler)
 transport = TSocket.TServerSocket('0.0.0.0', port=31400)
 tfactory = TTransport.TBufferedTransportFactory()
 pfactory = TBinaryProtocol.TBinaryProtocolFactory()
 
 server = handler.server = TServer.TSimpleServer(processor, transport, tfactory, pfactory)
 
-print("Starting SellarOptim analysis server...")
+print("Starting NestedSellar analysis server...")
 server.serve()
 print("done!")
