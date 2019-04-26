@@ -6,11 +6,12 @@ from optparse import OptionParser
 from openmdao.api import Problem
 from openmdao.api import NonlinearBlockGS, ScipyKrylov
 from openmdao.api import view_model
-from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
+# from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
 from ssbj_mda_base import SsbjMdaBase, SsbjMdaFactoryBase
-from mda.mda import Mda
 
+from mda.mda import Mda
 from performance import Performance
+from constraints import Constraints
 from constraints import Constraints
 
 class SsbjMda(SsbjMdaBase):
@@ -18,6 +19,9 @@ class SsbjMda(SsbjMdaBase):
     def __init__(self, scalers):
         super(SsbjMda, self).__init__()
         self.scalers = scalers
+
+    def setup(self):
+        super(SsbjMda, self).setup()
 
     def create_mda(self):
     	return Mda(self.scalers)
@@ -28,6 +32,20 @@ class SsbjMda(SsbjMdaBase):
     def create_constraints(self):
         return Constraints(self.scalers)
 
+class SsbjMdaFactory(SsbjMdaFactoryBase):
+    """ A factory to create disciplines of SsbjMda analysis """
+
+    @staticmethod
+    def create_mda(self):
+    	return Mda(self.scalers)
+
+    @staticmethod
+    def create_performance(self):
+        return Performance(self.scalers)
+
+    @staticmethod
+    def create_constraints(self):
+        return Constraints(self.scalers)
 
 if __name__ == "__main__":
     parser = OptionParser()

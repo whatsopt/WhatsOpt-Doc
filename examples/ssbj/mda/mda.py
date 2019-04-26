@@ -6,8 +6,8 @@ from optparse import OptionParser
 from openmdao.api import Problem
 from openmdao.api import NonlinearBlockGS, ScipyKrylov
 from openmdao.api import view_model
-from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
-from mda.mda_base import MdaBase, MdaFactoryBase
+# from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
+from mda.mda_base import MdaBase
 
 from .structure import Structure
 from .aerodynamics import Aerodynamics
@@ -21,9 +21,6 @@ class Mda(MdaBase):
 
     def setup(self):
         super(Mda, self).setup()
-        
-        self.nonlinear_solver = NonlinearBlockGS() 
-        self.linear_solver = ScipyKrylov()
 
     def create_structure(self):
     	return Structure(self.scalers)
@@ -33,3 +30,20 @@ class Mda(MdaBase):
     
     def create_propulsion(self):
     	return Propulsion(self.scalers)
+
+
+if __name__ == "__main__":
+    parser = OptionParser()
+    parser.add_option("-n", "--no-n2", action="store_false", dest='n2_view', default=True, 
+                      help="display N2 openmdao viewer")
+    (options, args) = parser.parse_args()
+
+    problem = Problem()
+    problem.model = Mda()
+
+    problem.setup()
+    problem.final_setup()
+    
+    if options.n2_view:
+        view_model(problem)
+    
