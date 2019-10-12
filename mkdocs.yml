@@ -1,0 +1,12 @@
+site_name: WhatsOpt
+nav:
+  - Home: index.md
+  - Installation: install.md
+  - Architecture: architecture.md
+  - Contributing: contrib.md
+  - About: about.md
+theme: 
+  name: readthedocs
+  language: en
+repo_url: https://github.com/OneraHub/WhatsOpt-Doc
+
