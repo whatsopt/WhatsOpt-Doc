@@ -8,5 +8,7 @@ nav:
 theme: 
   name: readthedocs
   language: en
+markdown_extensions:
+  - admonition
 repo_url: https://github.com/OneraHub/WhatsOpt-Doc
 
