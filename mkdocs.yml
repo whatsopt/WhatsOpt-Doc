@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Installation: install.md
   - Architecture: architecture.md
+  - Administration: administration.md
   - Contributing: contrib.md
   - About: about.md
 theme: 
