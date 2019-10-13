@@ -1,5 +1,3 @@
-# Installation
-
 ## Prerequisites
 
 * Ruby 2.5+ ([rvm](https://rvm.io/) recommended to manage Ruby environments)
@@ -7,7 +5,8 @@
 * Node.js 8.16.0+
 * Yarn 1.x+
 
-## Setup
+## Development setup
+
 WhatsOpt rails application setup:
 <pre>
   git clone https://github.com/OneraHub/WhatsOpt
@@ -29,7 +28,6 @@ Though not stricly required to run WhatsOpt, some features relies also on the fo
 </pre>
 To enable server code generation, you will have to install Apache Thrift compiler as well.
 
-### Development setup
 This is the typical development mode of a Rails application, it is simpler to install than a typical production server (with a full-blown web server and database engine). It will allow you to get started with WhatsOpt in your local environment.    
 
 <pre>
@@ -50,7 +48,7 @@ You can also run tests with:
   rails test
 </pre>
 
-### Production setup
+## Production setup
 Ruby on Rails ecosystem allows various options for application server configuration and deployment. Refer to related Ruby on Rails documentation to know your deployment options.
 
 The guide lines summarized below are related to the deployment of WhatsOpt on [ONERA server](https://ether.onera.fr/whatsopt). It relies on:
