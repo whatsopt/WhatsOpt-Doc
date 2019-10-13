@@ -1,2 +1,5 @@
 # WhatsOpt Documentation
-WhatsOpt tutorial and examples
+
+* WhatsOpt tutorial notebooks
+* WhastOpt examples
+* [WhatsOpt developer documentation](https://whatsopt.readthedocs.io) 
