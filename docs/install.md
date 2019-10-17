@@ -5,6 +5,9 @@
 * Node.js 8.16.0+
 * Yarn 1.x+
 
+WhatsOpt is a [Ruby on Rails](https://rubyonrails.org/) application, as such it follows typical installation procedure for such application. 
+A lot of material about RoR applications installation and configuration is available [out there](https://www.google.com/search?q=ruby+on+rails+application+installation).
+
 ## Development setup
 
 WhatsOpt rails application setup:
