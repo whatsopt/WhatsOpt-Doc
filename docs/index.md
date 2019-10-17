@@ -1,6 +1,7 @@
 # ![logo](img/favicon-32.png) Welcome to WhatsOpt Developer Documentation 
 
 [![Build Status](https://travis-ci.org/OneraHub/WhatsOpt.svg?branch=master)](https://travis-ci.org/OneraHub/WhatsOpt)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 WhatsOpt is a Ruby on Rails web application allowing to define and share multi-disciplinary analyses in terms of disciplines and data exchange. It was developed to support overall vehicle design activities at ONERA. 
 
