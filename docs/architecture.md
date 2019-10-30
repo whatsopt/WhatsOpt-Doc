@@ -7,7 +7,7 @@
 WhatsOpt handles multidisciplinary analyses (analyses for short).
 An analysis is composed with a list of disciplines which are connected through variables.
 
-_Analysis_ and _Discipline_ follows a Composite/Component pattern.
+_Analysis_ and _Discipline_ follow a Composite/Component pattern.
 An analysis can contain a discipline which can be in turn the container of another analysis.
 Thus analyses can be arrange in hierarchy of nested analyses forming a tree, 
 where root analyses are the entry point for the user.
@@ -125,7 +125,7 @@ In WhatsOpt, on a specific page, the user is able to specify:
 * whether a discipline is an implicit or explicit OpenMDAO component,
 * whether a discipline declares derivatives.
 
-In practice, this is handled by the following classes [_OpenmdaoAnalysisImpl_, _OpenmdaoDisciplineImpl_ and _Solver_
+In practice, this is handled by the following classes [_OpenmdaoAnalysisImpl_](https://github.com/OneraHub/WhatsOpt/blob/master/app/models/openmdao_analysis_impl.rb), [_OpenmdaoDisciplineImpl_](https://github.com/OneraHub/WhatsOpt/blob/master/app/models/openmdao_discipline_impl.rb) and [_Solver_](https://github.com/OneraHub/WhatsOpt/blob/master/app/models/solver.rb).
 
 ### Apache Thrift Server projection 
 
