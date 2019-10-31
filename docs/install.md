@@ -43,7 +43,7 @@ This is the typical development mode of a Rails application, it is simpler to in
   rails s -b 0.0.0.0
 </pre>
 
-Then you can visit the http://localhost:3000 url and log in with the default user login/passwd: whatsopt/whatsopt!
+Then you can visit the http://localhost:3000 url and log in with the default user login/passwd: <code>whatsopt</code>/<code>whatsopt</code>
 
 You can also run tests with:
 
