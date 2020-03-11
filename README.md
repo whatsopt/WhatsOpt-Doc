@@ -5,7 +5,7 @@
 This repository contains: 
 
 * [WhatsOpt developer documentation](https://whatsopt.readthedocs.io) 
-* some WhatsOpt tutorial notebooks for the beginners (you can also start with videos link below)
+* some WhatsOpt tutorial notebooks for the beginners (you can also start with videos below)
 * some WhatsOpt generated code examples
 
 # Other documentation materials
