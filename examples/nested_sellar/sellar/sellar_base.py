@@ -8,48 +8,51 @@
 import numpy as np
 from openmdao.api import Problem, Group, ParallelGroup, IndepVarComp
 from openmdao.api import NonlinearBlockGS, ScipyKrylov
-from openmdao.api import view_model
 from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
 
 from sellar.disc1 import Disc1
 from sellar.disc2 import Disc2
 
+
 class SellarBase(Group):
     """ An OpenMDAO base component to encapsulate Sellar MDA """
+
     def __init__(self, thrift_client=None, **kwargs):
-        super(SellarBase, self). __init__(**kwargs)
+        super(SellarBase, self).__init__(**kwargs)
 
-        self.nonlinear_solver = NonlinearBlockGS() 
-        self.nonlinear_solver.options['atol'] = 1.0e-10
-        self.nonlinear_solver.options['rtol'] = 1.0e-10
-        self.nonlinear_solver.options['maxiter'] = 10
-        self.nonlinear_solver.options['err_on_maxiter'] = True
-        self.nonlinear_solver.options['iprint'] = 1
+        self.nonlinear_solver = NonlinearBlockGS()
+        self.nonlinear_solver.options["atol"] = 1.0e-10
+        self.nonlinear_solver.options["rtol"] = 1.0e-10
+        self.nonlinear_solver.options["maxiter"] = 10
+        self.nonlinear_solver.options["err_on_non_converge"] = True
+        self.nonlinear_solver.options["iprint"] = 1
         self.linear_solver = ScipyKrylov()
-        self.linear_solver.options['atol'] = 1.0e-10
-        self.linear_solver.options['rtol'] = 1.0e-10
-        self.linear_solver.options['maxiter'] = 10
-        self.linear_solver.options['err_on_maxiter'] = True
-        self.linear_solver.options['iprint'] = 1
+        self.linear_solver.options["atol"] = 1.0e-10
+        self.linear_solver.options["rtol"] = 1.0e-10
+        self.linear_solver.options["maxiter"] = 10
+        self.linear_solver.options["err_on_non_converge"] = True
+        self.linear_solver.options["iprint"] = 1
 
-    def setup(self): 
+    def setup(self):
 
-        self.add_subsystem('Disc1', self.create_disc1(), promotes=['y1', 'x', 'y2', 'z'])
-        self.add_subsystem('Disc2', self.create_disc2(), promotes=['y2', 'y1', 'z'])
+        self.add_subsystem(
+            "Disc1", self.create_disc1(), promotes=["y1", "x", "y2", "z"]
+        )
+        self.add_subsystem("Disc2", self.create_disc2(), promotes=["y2", "y1", "z"])
 
     def create_disc1(self):
-    	return Disc1()
+        return Disc1()
+
     def create_disc2(self):
-    	return Disc2()
+        return Disc2()
 
 
 # Used by Thrift server to serve disciplines
 class SellarFactoryBase(object):
     @staticmethod
     def create_sellar_disc1():
-    	return Disc1()
-            
+        return Disc1()
+
     @staticmethod
     def create_sellar_disc2():
-    	return Disc2()
-            
+        return Disc2()

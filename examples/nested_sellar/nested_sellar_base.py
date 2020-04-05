@@ -8,7 +8,6 @@
 import numpy as np
 from openmdao.api import Problem, Group, ParallelGroup, IndepVarComp
 from openmdao.api import NonlinearBlockGS, ScipyKrylov
-from openmdao.api import view_model
 from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
 
 from sellar.sellar import Sellar
@@ -16,51 +15,59 @@ from functions import Functions
 from sellar.disc1 import Disc1
 from sellar.disc2 import Disc2
 
+
 class NestedSellarBase(Group):
     """ An OpenMDAO base component to encapsulate NestedSellar MDA """
+
     def __init__(self, thrift_client=None, **kwargs):
-        super(NestedSellarBase, self). __init__(**kwargs)
+        super(NestedSellarBase, self).__init__(**kwargs)
 
-        self.nonlinear_solver = NonlinearBlockGS() 
-        self.nonlinear_solver.options['atol'] = 1.0e-10
-        self.nonlinear_solver.options['rtol'] = 1.0e-10
-        self.nonlinear_solver.options['maxiter'] = 10
-        self.nonlinear_solver.options['err_on_maxiter'] = True
-        self.nonlinear_solver.options['iprint'] = 1
+        self.nonlinear_solver = NonlinearBlockGS()
+        self.nonlinear_solver.options["atol"] = 1.0e-10
+        self.nonlinear_solver.options["rtol"] = 1.0e-10
+        self.nonlinear_solver.options["maxiter"] = 10
+        self.nonlinear_solver.options["err_on_non_converge"] = True
+        self.nonlinear_solver.options["iprint"] = 1
         self.linear_solver = ScipyKrylov()
-        self.linear_solver.options['atol'] = 1.0e-10
-        self.linear_solver.options['rtol'] = 1.0e-10
-        self.linear_solver.options['maxiter'] = 10
-        self.linear_solver.options['err_on_maxiter'] = True
-        self.linear_solver.options['iprint'] = 1
+        self.linear_solver.options["atol"] = 1.0e-10
+        self.linear_solver.options["rtol"] = 1.0e-10
+        self.linear_solver.options["maxiter"] = 10
+        self.linear_solver.options["err_on_non_converge"] = True
+        self.linear_solver.options["iprint"] = 1
 
-    def setup(self): 
-        indeps = self.add_subsystem('indeps', IndepVarComp(), promotes=['*'])
+    def setup(self):
+        indeps = self.add_subsystem("indeps", IndepVarComp(), promotes=["*"])
 
-        indeps.add_output('x', 2.0)
-        indeps.add_output('z', [5.0, 2.0])
-        self.add_subsystem('Sellar', self.create_sellar(), promotes=['y1', 'x', 'z', 'y2', 'y1', 'x', 'y2', 'z', 'y2', 'y1', 'z'])
-        self.add_subsystem('Functions', self.create_functions(), promotes=['x', 'y1', 'y2', 'z', 'f', 'g1', 'g2'])
+        indeps.add_output("x", 2.0)
+        indeps.add_output("z", [5.0, 2.0])
+        self.add_subsystem(
+            "Sellar",
+            self.create_sellar(),
+            promotes=["y1", "x", "z", "y2", "y1", "x", "y2", "z", "y2", "y1", "z"],
+        )
+        self.add_subsystem(
+            "Functions",
+            self.create_functions(),
+            promotes=["x", "y1", "y2", "z", "f", "g1", "g2"],
+        )
 
     def create_sellar(self):
-    	return Sellar()
-
+        return Sellar()
 
     def create_functions(self):
-    	return Functions()
+        return Functions()
 
 
 # Used by Thrift server to serve disciplines
 class NestedSellarFactoryBase(object):
     @staticmethod
     def create_functions():
-    	return Functions()
-            
+        return Functions()
+
     @staticmethod
     def create_sellar_disc1():
-    	return Disc1()
-            
+        return Disc1()
+
     @staticmethod
     def create_sellar_disc2():
-    	return Disc2()
-            
+        return Disc2()
