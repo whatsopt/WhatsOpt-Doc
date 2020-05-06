@@ -4,7 +4,7 @@
 
 ## Getting started
 
-To start with WhatsOpt, you need an account on a WhatOpt server (see [contact](#contact)). Then You should read the tutorial notebooks ([part 1](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/whatsopt_tutorial_part_1.ipynb) and [part 2](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/whatsopt_tutorial_part_2.ipynb)) and watch the [videos](https://www.youtube.com/playlist?list=PLhWP4LJdKyGcFZyvsNLU4s2_sdmTSGVeo).
+To start with WhatsOpt, you need an account on a WhatOpt server (see [contact](#contact)). Then you should read the tutorial notebooks ([part 1](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/whatsopt_tutorial_part_1.ipynb) and [part 2](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/whatsopt_tutorial_part_2.ipynb)) and/or watch the [videos](https://www.youtube.com/playlist?list=PLhWP4LJdKyGcFZyvsNLU4s2_sdmTSGVeo).
 
 The [paper](https://www.researchgate.net/publication/333806928_WhatsOpt_a_web_application_for_multidisciplinary_design_analysis_and_optimization) will give you the overview and the background on the project.
 
