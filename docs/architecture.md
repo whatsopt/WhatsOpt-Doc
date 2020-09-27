@@ -20,7 +20,6 @@ input and output variables. Disciplines can have the following stereotype :
 
 * _Discipline_: regular discipline
 * _Analysis_: discipline containing an analysis
-* _Function_: utiity pseudo-discipline allowing to compute synthetize quantity from other discipline outputs
 * _MetaModel_: discipline which is implemented thanks to surrogate models
 
 A special pseudo-discipline is the _Driver_, unique in the analysis, first in the list of discipline, it represents
@@ -44,6 +43,8 @@ Beside its name a variable has the following properties:
 * an initial value (optional)
 * a lower bound (optional)
 * an upper bound (optional)
+* scaling (optional)
+* distribution (optional, only avauilable for uncertain variable role)
 
 ### Connection
 
@@ -54,7 +55,7 @@ Connection carries also a role property which defaults to:
 * _response_ when the input variable is consumed by the _Driver_
 * _state_ otherwise 
 
-A _parameter_ connection can be specialized as a _design variable_ connection.
+A _parameter_ connection can be specialized as a _design variable_ connection or an _uncertain variable_.
 
 A _response_ connection can be specialized as a:
 
@@ -64,8 +65,8 @@ A _response_ connection can be specialized as a:
 ### Operations and result Cases
 
 An _Operation_ on an analysis can be either an optimization or the execution of a design of experiments.
-Results are input variables values (i.e. _Cases_) successivly set by the driver (optimizer or doe runner) and the 
-corresponding output variables produced by the analysis evaluation.  
+Results are input variables values (i.e. _Cases_) successively set by the driver (optimizer or doe runner) 
+and the corresponding output variables produced by the analysis evaluation.  
 
 Special design of experiments Morris is distinguish as used to carryout special screening operation
 thanks to Morris' method.

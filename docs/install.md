@@ -25,9 +25,10 @@ Though not stricly required to run WhatsOpt, some features relies also on the fo
 * [SMT](https://smt.readthedocs.io/): enable design of experiments and metamodels creation
 * [SALib](https://salib.readthedocs.io/): enable sensitivity analysis operations
 * [Apache Thrift](https://thrift.apache.org/): enable server creation and remote operations on local network
+* [OpenTURNS](https://openturns.org): enable uncertain variables operations 
 
 <pre>
-  pip install smt==0.3.4 salib==1.3.3 thrift==0.11.0
+  pip install smt salib thrift
 </pre>
 To enable server code generation, you will have to install Apache Thrift compiler as well.
 
