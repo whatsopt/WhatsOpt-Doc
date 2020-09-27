@@ -5,7 +5,7 @@
 from optparse import OptionParser
 from openmdao.api import Problem
 from openmdao.api import NonlinearBlockGS, ScipyKrylov
-from openmdao.api import view_model
+from openmdao.visualization.n2_viewer.n2_viewer import n2
 from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
 from sellar_base import SellarBase, SellarFactoryBase
 
@@ -38,5 +38,5 @@ if __name__ == "__main__":
     problem.final_setup()
     
     if options.n2_view:
-        view_model(problem)
+        n2(problem)
     

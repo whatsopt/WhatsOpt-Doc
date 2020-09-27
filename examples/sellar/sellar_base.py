@@ -8,7 +8,6 @@
 import numpy as np
 from openmdao.api import Problem, Group, ParallelGroup, IndepVarComp
 from openmdao.api import NonlinearBlockGS, ScipyKrylov
-from openmdao.api import view_model
 from openmdao_extensions.reckless_nonlinear_block_gs import RecklessNonlinearBlockGS
 
 from disc1 import Disc1
@@ -24,13 +23,11 @@ class SellarBase(Group):
         self.nonlinear_solver.options['atol'] = 1.0e-10
         self.nonlinear_solver.options['rtol'] = 1.0e-10
         self.nonlinear_solver.options['maxiter'] = 10
-        self.nonlinear_solver.options['err_on_maxiter'] = True
         self.nonlinear_solver.options['iprint'] = 1
         self.linear_solver = ScipyKrylov()
         self.linear_solver.options['atol'] = 1.0e-10
         self.linear_solver.options['rtol'] = 1.0e-10
         self.linear_solver.options['maxiter'] = 10
-        self.linear_solver.options['err_on_maxiter'] = True
         self.linear_solver.options['iprint'] = 1
 
     def setup(self): 
