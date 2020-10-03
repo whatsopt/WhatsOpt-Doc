@@ -8,7 +8,7 @@ To start with WhatsOpt, you need an account on a WhatOpt server (see [contact](#
 
 The [paper](https://www.researchgate.net/publication/333806928_WhatsOpt_a_web_application_for_multidisciplinary_design_analysis_and_optimization) will give you the overview and the background on the project.
 
-The WhatsOpt command line interface (_wop_) cheat sheet is available [here](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/wop_memo.ipynb). 
+The WhatsOpt command line interface (_wop_) cheat sheet is available [here](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/wop_memo.md). 
 
 ## Developper documentation
 
