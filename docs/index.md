@@ -17,6 +17,6 @@ WhatsOpt users would better get started with the following resources:
 * [WhatsOpt paper](https://www.researchgate.net/publication/333806928_WhatsOpt_a_web_application_for_multidisciplinary_design_analysis_and_optimization): WhatsOpt: a web application for multidisciplinary design analysis and optimization.
 * [WhatsOpt doc](https://github.com/OneraHub/WhatsOpt-Doc): Notebooks and examples
 * [WhatsOpt videos](https://www.youtube.com/playlist?list=PLhWP4LJdKyGcFZyvsNLU4s2_sdmTSGVeo): Tutorials
-* [wop cheat sheet](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/wop_memo.ipynb)
+* [wop cheat sheet](https://github.com/OneraHub/WhatsOpt-Doc/blob/master/wop_memo.md)
 
 
