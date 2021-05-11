@@ -1,7 +1,5 @@
 # Contributing
 
-> Disclaimer: WhatsOpt is still in an early stage as an open source project. Hopefully code and documentation will improve over time to help you get over the hurdles of development environment installation and allow proper contributions to the project.  
-
 Any feedback, questions, bug report or code contribution is welcome. 
 
 For bug reports or questions, you may file it in the issue tab of this repository.
