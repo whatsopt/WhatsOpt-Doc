@@ -36,11 +36,15 @@ This is the typical development mode of a Rails application, it is simpler to in
 
 <pre>
   cd WhatsOpt
-  bundle install
+  bundle install --without "staging production"
   cp config/configuration.yml.example config/configuration.yml
   cp config/database.yml.example config/database.yml
-  rails db:migrate
-  rails db:seed
+  RAILS_ENV=development rails db:load:schema
+  rails whatsopt:access:user
+  Login: whatsopt 
+  Email: whatsopt@example.com
+  Password: <password with at least 1 uppercase, 1 digit, 1 symbol>
+  Password Confirmation: <same as above>
   rails s -b 0.0.0.0
 </pre>
 
