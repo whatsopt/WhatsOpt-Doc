@@ -7,9 +7,9 @@ _(updated: 03/10/2020, wop version : 1.11.0)_
 wop --version
 ```
 
-### Log in/out to/from WhatOpt server _https://ether.onera.fr/whatsopt_
+### Log in/out to/from WhatOpt server
 ```bash
-wop login https://ether.onera.fr/whatsopt
+wop login <whatsopt server url>
 ```
 ```bash
 wop logout
