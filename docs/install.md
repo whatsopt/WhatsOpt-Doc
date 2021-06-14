@@ -59,7 +59,7 @@ You can also run tests with:
 ## Production setup
 Ruby on Rails ecosystem allows various options for application server configuration and deployment. Refer to related Ruby on Rails documentation to know your deployment options.
 
-The guide lines summarized below are related to the deployment of WhatsOpt on [ONERA server](https://ether.onera.fr/whatsopt). It relies on:
+The guide lines summarized below reflect the deployment of WhatsOpt at ONERA. It relies on:
 
 * Apache Server
 * Passenger (aka module for rails)
