@@ -20,7 +20,7 @@ You can test with
 
 
 ```python
-!wop --version
+wop --version
 ```
 
     wop, version 1.6.0
@@ -32,7 +32,7 @@ Open your favourite web browser (Firefox recommended) and navigate to the _Whats
 
 ![Multidisicplinary analyses](img/analyses.png)
 
-We are going to create the [Sellar analysis](https://arc.aiaa.org/doi/abs/10.2514/6.1996-714) which is kind-of the "hello world" of the MDAO domain. The figure below is copied from [OpenMDAO tutorial](http://openmdao.org/twodocs/versions/latest/basic_guide/sellar.html?highlight=sellar). In our analysis below, we will group the <code>Objective</code> and <code>Contraint</code> components in one single component named <code>Functions</code>.
+We are going to create the [Sellar analysis](https://arc.aiaa.org/doi/abs/10.2514/6.1996-714) which is kind-of the "hello world" of the MDAO domain. The figure below is copied from [OpenMDAO tutorial](https://openmdao.org/newdocs/versions/latest/basic_user_guide/multidisciplinary_optimization/sellar.html?highlight=sellar). In our analysis below, we will group the <code>Objective</code> and <code>Contraint</code> components in one single component named <code>Functions</code>.
 
 ![sellar XDSM](img/sellar_xdsm_3.png)
 
@@ -41,7 +41,7 @@ Enter the name of the New Analysis. The WhatsOpt convention here is to use a Cam
 
 ![New Sellar analysis](img/new_sellar.png)
 
-b. Once you clicked Submit button, you arrive on the edition page of the analysis which is empty at the moment. Below the title the [XDSM](http://mdolab.engin.umich.edu/content/xdsm-overview) diagram is for the moment displayed with a single component named Driver which represent the user of the analysis (directly the actual user if he or she runs tha analysis once or indirectly through the usage of an optimizer [XXX] or a design of experiment runner [XXX]). AT the bottom there are four tabs : <code>Analysis</code>, <code>Disciplines</code>, <code>Connections</code>, <code>Variables</code>, the latter one is displayed as a default. We can see there is no variable for the moment (no rows in the table).
+b. Once you clicked Submit button, you arrive on the edition page of the analysis which is empty at the moment. Below the title the [XDSM](https://mdolab.engin.umich.edu/wiki/xdsm-overview) diagram is for the moment displayed with a single component named Driver which represent the user of the analysis (directly the actual user if he or she runs tha analysis once or indirectly through the usage of an optimizer [XXX] or a design of experiment runner [XXX]). AT the bottom there are four tabs : <code>Analysis</code>, <code>Disciplines</code>, <code>Connections</code>, <code>Variables</code>, the latter one is displayed as a default. We can see there is no variable for the moment (no rows in the table).
 
 Note: <strong>All screenshots were made with XDSM v1 standard, since then WhatsOpt uses XDSM v2 (which mainly differs by using less flashy colors).</strong>  
 
