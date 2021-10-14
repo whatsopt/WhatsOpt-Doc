@@ -1,6 +1,6 @@
 # WhatsOpt command line memo 
 
-_(updated: 03/10/2020, wop version : 1.11.0)_
+_(updated: 14/10/2021, wop version : 1.19.1)_
 
 ### wop version
 ```bash
@@ -74,7 +74,7 @@ wop show
 
 ### Export standalone XDSM page from any OpenMDAO problem 
 ```bash
-wop show -x -f openmdao_problem.py
+wop show -f openmdao_problem.py
 ```
 
 ### Export analysis _42_ to json format in mda.json
@@ -82,8 +82,22 @@ wop show -x -f openmdao_problem.py
 wop pull --json 42 > mda.json
 ```
 
-### Import analysis _42_ to json format
+### Import analysis _42_ from json format
 ```bash
 wop push --json mda.json
 ```
 
+### Export project _7_ to json format in mda.json
+```bash
+wop pull --json -p 7 > project.json
+```
+
+### Import project _7_ from json format
+```bash
+wop push --json project.json
+```
+
+### Convert analysis sqlite file to csv file
+```bash
+wop convert analysis_doe.sqlite
+```
