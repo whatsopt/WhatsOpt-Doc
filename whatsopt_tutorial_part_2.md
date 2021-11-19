@@ -72,18 +72,18 @@ Pull functions_base.py
 Pull sellar.py
 Pull sellar_base.py
 Pull __init__.py
-Pull run_analysis.py
+Pull run_mda.py
 Analysis 24 pulled
 ```
 
-For each discipline and the analysis itself two files are generated: <code>name.py</code> and <code>name_base.py</code>. Finally a simple script <code>run_analysis.py</code> which allows to run the analysis.
+For each discipline and the analysis itself two files are generated: <code>name.py</code> and <code>name_base.py</code>. Finally a simple script <code>run_mda.py</code> which allows to run the analysis.
 
 <strong>You are intended to only modify the <code>name.py</code> files as we are going to see the <code>name_base.py</code> files may be overwritten by further <code>wop update</code> commands</strong>. 
 
 d. Just for testing your openmdao installation, you can run the analysis:
 
 ```bash
-> python run_analysis.py
+> python run_mda.py
 NL: NLBGS Converged in 0 iterations
 9 Input(s) in 'model'
 ---------------------
@@ -179,7 +179,7 @@ e. It is time to implement the disciplines properly. Edit the <code>name.py</cod
 f. You can now run again the analysis:
 
 ```bash
-> python run_analysis.py
+> python run_mda.py
 NL: NLBGS Converged in 7 iterations
 9 Input(s) in 'model'
 ---------------------
@@ -259,12 +259,12 @@ Update functions_base.py
 Update demo_base.py
 Update __init__.py
 Pull run_doe.py
-Pull run_optimization.py
+Pull run_mdo.py
 Pull run_screening.py
 Analysis 24 updated
 ```
 
-Three new scripts are generated: <code>run_screening.py</code>, <code>run_doe.py</code>, <code>run_optimization.py</code>. Those scripts are examples of operations using the analysis and are intended to be a starting point to develop is own scripts.
+Three new scripts are generated: <code>run_screening.py</code>, <code>run_doe.py</code>, <code>run_mdo.py</code>. Those scripts are examples of operations using the analysis and are intended to be a starting point to develop is own scripts.
 
 Before screening or run ning a DoE you need to enter design variables space bounds in WhatsOpt. On the analysis edition page, fill in :
 * for <code>x</code>, lower bound=0, upper bound=10
@@ -353,7 +353,7 @@ Note: As noticed in previous section, you can also upload the <code>sellar_scree
 
 ### Optimization
 
-To run the <code>run_optimization.py</code> script, we need first to define the optimization problem in WhatsOpt. This is done by editing the analysis and selecting roles for relevant variables.
+To run the <code>run_mdo.py</code> script, we need first to define the optimization problem in WhatsOpt. This is done by editing the analysis and selecting roles for relevant variables.
 
 Obviously we have paved the way to do this by defining outputs of the <code>Functions</code> pseudo-discipline. Those outputs f, g1, g2 are computed to define respectively the objective to minimize and negative constraints.
 
@@ -361,7 +361,7 @@ Thus you have to select <code>Min. Objective</code> role for <code>f</code> vari
 
 ![Sellar optimization parallel plot](img/sellar_optim_roles2.png)
 
-Once it is done, you can update the <code>run_optimization.py</code> script.
+Once it is done, you can update the <code>run_mdo.py</code> script.
 
 <pre>
 > wop update --run-ops
@@ -370,7 +370,7 @@ Once it is done, you can update the <code>run_optimization.py</code> script.
 Then you can run the optimization script :
 
 <pre>
-> python run_optimization.py
+> python run_mdo.py
 </pre>
 
 As for previous scripts, a <code>sellar_optimization.sqlite</code> result file is generated and you can also visualize it on WhatsOpt by uploading it.
