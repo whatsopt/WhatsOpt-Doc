@@ -1,9 +1,9 @@
 ## Prerequisites
 
-* Ruby 2.5+ ([rvm](https://rvm.io/) recommended to manage Ruby environments)
-* Python 3.6+ ([Anaconda](https://www.anaconda.com/distribution/) recommended to manage Python environments)
-* Node.js 8.16.0+
-* Yarn 1.x+
+* Ruby 3.0+ ([rvm](https://rvm.io/) recommended to manage Ruby environments)
+* Python 3.8+ ([Anaconda](https://www.anaconda.com/distribution/) recommended to manage Python environments)
+* Node.js 16.13+
+* Yarn 1.22+
 
 WhatsOpt is a [Ruby on Rails](https://rubyonrails.org/) application, as such it follows typical installation procedure for such application. 
 A lot of material about RoR applications installation and configuration is available [out there](https://www.google.com/search?q=ruby+on+rails+application+installation).

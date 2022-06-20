@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-Install [OpenMDAO](http://openmdao.org/) 2.8+ required 
+Install [OpenMDAO](http://openmdao.org/) 3.0+ required 
 
 ```shell
 pip install openmdao 
@@ -23,7 +23,7 @@ You can test with
 wop --version
 ```
 
-    wop, version 1.6.0
+    wop, version 1.19.1
     
 
 ## Sellar Analysis Creation
