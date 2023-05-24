@@ -1,6 +1,8 @@
 # WhatsOpt command line memo 
 
-_(updated: 14/10/2021, wop version : 1.19.1)_
+_(updated: 24/05/2023, wop version : 2.5.0)_
+
+## Basics
 
 ### wop version
 ```bash
@@ -20,12 +22,18 @@ wop logout
 wop version
 ```
 
+### Get connection status and currently pulled analysis
+``` bash
+wop status
+``` 
+
 ### List available analyses getting their id, name and creation date
 ```bash
 wop list
 ```
+## Code generation from Analysis (pulling from WhatsOpt server)
 
-### Generate code from an analysis with id _42_ (which becomes the "reference analysis")
+### Generate code from an analysis with id #_42_ (which becomes the "reference analysis")
 ```bash
 wop pull 42
 ```
@@ -40,10 +48,11 @@ wop update
 wop update --run-ops
 ```
 
-### Change reference analysis from which the code is updated to use analysis with id _43_
+### Change reference analysis from which the code is updated to use analysis with id #_43_
 ```bash
 wop update --analysis-id 43
 ```
+## Analysis creation from code (pushing to WhatsOpt server)
 
 ### Import an analysis used from an OpenMDAO problem used in _analysis.py_
 ```bash
@@ -55,17 +64,13 @@ wop push program.py
 wop push -c MyComponentClass component.py
 ```
 
-### Copy and get ownership of analysis named _mda_ with id _42_
+### Copy and get ownership of analysis named _mda_ with id #_42_
 ```bash
 wop pull 42
 wop push mda.py  # -> create new analysis 43
 wop update --analysis-id 43
 ```
-
-### Get connection status and currently pulled analysis
-``` bash
-wop status
-``` 
+## Export/Import
 
 ### Export standalone XDSM page for an analysis in WhatsOpt
 ```bash
@@ -77,25 +82,52 @@ wop show
 wop show -f openmdao_problem.py
 ```
 
-### Export analysis _42_ to json format in mda.json
+### Export analysis #_42_ to json format in mda.json
 ```bash
 wop pull --json 42 > mda.json
 ```
 
-### Import analysis _42_ from json format
+### Import analysis #_42_ from json format
 ```bash
 wop push --json mda.json
 ```
 
-### Export project _7_ to json format in mda.json
+### Export project #_7_ to json format in mda.json
 ```bash
 wop pull --json -p 7 > project.json
 ```
 
-### Import project _7_ from json format
+### Import project #_7_ from json format
 ```bash
 wop push --json project.json
 ```
+## Packaging (wop 2.5.0+)
+
+Following commands expect code being pulled using _package mode_ which is the default in wop >= 2.5.0
+  * wop < 2.5.0 : wop pull --package 42
+  * wop >= 2.5.0: wop pull 42
+
+### Building the package of the current analysis
+
+wop build
+
+### Building and publishing the package of the current analysis on the WhatsOpt server (a.k.a WopStore)
+
+wop publish
+
+### Fetching discipline implementations of the packaged analysis #_42_ within the current analysis code 
+
+wop fetch 42
+
+### Merging disciplines of the analysis #_42_ within the current analysis
+
+wop merge 42
+
+### Pulling disciplines of the analysis #_42_ within the current analysis (equivalent to merge + fetch)
+
+wop pull 42
+
+## Utilities
 
 ### Convert analysis sqlite file to csv file
 ```bash
