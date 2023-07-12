@@ -1,6 +1,6 @@
 # WhatsOpt command line memo 
 
-_(updated: 24/05/2023, wop version : 2.5.0)_
+_(updated: 12/07/2023, wop version : 2.5.0)_
 
 ## 1. Basics
 
