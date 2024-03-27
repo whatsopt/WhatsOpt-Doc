@@ -63,16 +63,19 @@ then find out the id of the analysis you want to get and generate the code with 
 ```bash
 > wop pull 24
 (base) D:\rlafage\sellar>wop pull 24
-Pull disc1.py
-Pull disc1_base.py
-    Pull disc2.py<
-Pull disc2_base.py
-Pull functions.py
-Pull functions_base.py
-Pull sellar.py
-Pull sellar_base.py
-Pull __init__.py
+Pull sellar/disc1.py
+Pull sellar/disc1_base.py
+Pull sellar/disc2.py
+Pull sellar/disc2_base.py
+Pull sellar/functions.py
+Pull sellar/functions_base.py
+Pull sellar/sellar.py
+Pull sellar/sellar_base.py
+Pull sellar/__init__.py
+Pull mda_init.py
 Pull run_mda.py
+Pull README
+Pull setup.py
 Analysis 24 pulled
 ```
 
@@ -230,11 +233,11 @@ g. You cab set other initial values in WhatsOpt for <code>x</code> and <code>z</
 
 ```bash
 > wop update
-Update disc1_base.py
-Update disc2_base.py
-Update functions_base.py
-Update sellar_base.py
-Update __init__.py
+Update sellar/disc1_base.py
+Update sellar/disc2_base.py
+Update sellar/functions_base.py
+Update sellar/sellar_base.py
+Update sellar/__init__.py
 Analysis 24 updated
 ```
 
@@ -253,11 +256,11 @@ a. You can now generate the code to run operations on your analysis.
 
 ```bash
 > wop update --run-ops
-Update disc1_base.py
-Update disc2_base.py
-Update functions_base.py
-Update demo_base.py
-Update __init__.py
+Update sellar/disc1_base.py
+Update sellar/disc2_base.py
+Update sellar/functions_base.py
+Update sellar/demo_base.py
+Update sellar/__init__.py
 Pull run_doe.py
 Pull run_mdo.py
 Pull run_screening.py
@@ -386,7 +389,3 @@ A new link SLSQP should appear in your Sellar _Operations_ column on the _Analys
 
 Note: Plots are drawn using Plotly library, there are default interactions allowing to display more or less  information. See [Plotly web site](https://plot.ly/javascript/) for more information.
 
-
-```python
-
-```
