@@ -11,5 +11,5 @@ theme:
   language: en
 markdown_extensions:
   - admonition
-repo_url: https://github.com/OneraHub/WhatsOpt-Doc
+repo_url: https://github.com/whatsopt/WhatsOpt-Doc
 
