@@ -12,8 +12,8 @@ The WhatsOpt command line interface (_wop_) cheat sheet is available [here](http
 
 ## Developper documentation
 
-For a deeper knowledge of the implementation of WhatsOpt, you can browse the [developer documentation](https://whatsopt.readthedocs.io).
-As WhatsOpt exposes some REST web services, you have access to the [their OpenAPI documentation here](https://ether.onera.fr/whatsopt/api_doc).  
+For some implementation details of WhatsOpt, you can browse the [developer documentation](https://whatsopt.readthedocs.io).
+As WhatsOpt exposes some REST web services, you have access to [their OpenAPI documentation here](https://ether.onera.fr/whatsopt/api_doc).  
 
 ## Citation
 
