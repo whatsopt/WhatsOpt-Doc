@@ -79,7 +79,7 @@ Notes:
   * To unselect, click again on the selected element.
 
 g. Successively, you keep on selecting and typing:
-  * From: <code>Driver</code>, To: <code>Disc2</code>, enter <code>x</code>, then press _Enter_
+  * From: <code>Driver</code>, To: <code>Disc2</code>, enter <code>z</code>, then press _Enter_
   * From: <code>Driver</code>, To: <code>Functions</code>, enter <code>x, z</code>, then press _Enter_
   * From: <code>Disc1</code>, To: <code>Disc2</code>, enter <code>y1</code>, then press _Enter_
   * From: <code>Disc1</code>, To: <code>Functions</code>, enter <code>y1</code>, then press _Enter_
